@@ -1,0 +1,14 @@
+# https://cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language#create_table_statement
+CREATE TABLE IF NOT EXISTS Business.Customers
+(
+  x INT64,
+  y STRING
+);
+
+# https://cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language#alter_table_add_column_statement
+ALTER TABLE Business.Customers
+  ADD COLUMN IF NOT EXISTS A STRING,
+  ADD COLUMN IF NOT EXISTS B GEOGRAPHY,
+  ADD COLUMN IF NOT EXISTS C ARRAY<NUMERIC>,
+  ADD COLUMN IF NOT EXISTS D DATE OPTIONS(description="my description");
+  

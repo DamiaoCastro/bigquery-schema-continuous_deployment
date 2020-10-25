@@ -1,4 +1,4 @@
-name: Publish Schema for Bigquery
+name: Publish Bigquery schema
 
 on:
   push:

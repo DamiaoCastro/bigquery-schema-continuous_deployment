@@ -1,0 +1,11 @@
+{
+    "id": "Business1",
+    "access": [
+        {
+            "role": "OWNER",
+            "specialGroup": "projectOwners"
+        }
+    ],
+    "description": "business stuff",
+    "location": "EU"
+}

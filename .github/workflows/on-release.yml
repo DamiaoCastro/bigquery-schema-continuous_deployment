@@ -1,0 +1,24 @@
+name: publish schema
+
+on:
+  release:
+    types:
+      - created
+
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+       
+    - name: create credentials file
+      run: echo '${{secrets.GOOGLE_CLOUD_CREDENTIALS}}' > ./credentials.json
+      
+    - name: Publish
+      env:
+        GOOGLE_APPLICATION_CREDENTIALS: "./credentials.json"
+      run: |
+        npm install @google-cloud/bigquery
+        node bq.js production

@@ -21,4 +21,4 @@ jobs:
         GOOGLE_APPLICATION_CREDENTIALS: "./credentials.json"
       run: |
         npm install @google-cloud/bigquery
-        node bq.js production
+        node .github/workflows/bq.js production

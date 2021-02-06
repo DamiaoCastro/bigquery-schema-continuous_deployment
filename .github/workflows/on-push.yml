@@ -18,4 +18,4 @@ jobs:
         GOOGLE_APPLICATION_CREDENTIALS: "./credentials.json"
       run: |
         npm install @google-cloud/bigquery
-        node bq.js dryRun
+        node .github/workflows/bq.js dryRun

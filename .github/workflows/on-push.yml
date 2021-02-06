@@ -13,7 +13,7 @@ jobs:
     - name: create credentials file
       run: echo '${{secrets.GOOGLE_CLOUD_CREDENTIALS}}' > ./credentials.json
       
-    - name: Publish
+    - name: DryRun
       env:
         GOOGLE_APPLICATION_CREDENTIALS: "./credentials.json"
       run: |

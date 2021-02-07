@@ -1,4 +1,3 @@
-const { DH_UNABLE_TO_CHECK_GENERATOR } = require('constants');
 const { readdirSync, readFileSync } = require('fs')
 const { BigQuery } = require('@google-cloud/bigquery');
 const bigquery = new BigQuery();
@@ -52,14 +51,15 @@ const getBqsqlFilesNames = path =>
     ;
 
 async function executeQuery(path, location) {
+
     console.log(`file: ${path}`);
 
     const fileContent = readFileSync(path, 'utf8');
 
-    await bigquery.createQueryJob({
+    const r = await bigquery.createQueryJob({
         query: fileContent,
-        location : this.location,
-        dryRun : this.dryRun,
+        location: location,
+        dryRun: this.dryRun,
         useLegacySql: false
     });
 
